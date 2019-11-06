@@ -1,35 +1,23 @@
 <style>
   :root {
-    --border-radius: 3px;
-    --font-color: #333;
+    --myuw-card-frame-border-radius: 3px;
+    --myuw-card-font-color: #333;
+    --myuw-card-background: #f5f5f5;
   }
   .myuw-card-frame {
     display: flex;
     flex-direction: column;
     position: relative;
+    background: var(--myuw-card-background, #f5f5f5);
+    border-radius: var(--myuw-card-frame-border-radius, 3px);
     font-family: 'Roboto', sans-serif;
-    background: #f5f5f5;
-    border-radius: 3px;
+    color: var(--myuw-card-font-color, #333);
     height: 290px;
     width: 290px;
-    color: var(--font-color);
     box-sizing: border-box;
     -webkit-box-direction: normal;
     overflow: hidden;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-  }
-  #myuw-card-header {
-    display: flex;
-    flex-direction: row;
-    font-weight: 300;
-    height: 60px;
-    min-height: 60px;
-    line-height: 1.1;
-    align-items: center;
-    padding: 0 40px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    box-sizing: border-box;
   }
 </style>
 

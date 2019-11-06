@@ -42,5 +42,13 @@ $ yarn start
 $ npm start
 ```
 
+Build modules to `dist/`:
+
+```sh
+$ yarn build
+# or
+$ npm run build
+```
+
 [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) will be install
 and are already configured. It is recommended that you use them.
