@@ -14,11 +14,20 @@
     overflow: hidden;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
   }
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 16px;
+    box-sizing: border-box;
+  }
 </style>
 
 <div class="myuw-card-frame">
   <slot name="myuw-card-header"></slot>
-  <div id="card-content">
+  <div class="card-content">
     <slot name="myuw-card-content"></slot>
   </div>
   <slot name="myuw-card-footer"></slot>

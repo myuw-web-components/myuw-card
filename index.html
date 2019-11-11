@@ -7,7 +7,7 @@
       }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400&display=swap" rel="stylesheet"> 
-    <script src="index.js"></script>
+    <script type="module" src="dist/myuw-card.mjs"></script>
   </head>
   <body>
     <myuw-card-frame size="full">
@@ -15,6 +15,30 @@
         slot="myuw-card-header"
         title="Course Search and Enroll"
       ></myuw-card-header>
+      <myuw-icon-link 
+        slot="myuw-card-content"
+        icon="code"
+        icon-type="md"
+        href="https://www.google.com"
+      ></myuw-icon-link>
+      <myuw-card-footer
+        slot="myuw-card-footer"
+        text="Launch app"
+        href="https://www.google.com"
+      ></myuw-card-footer>
+    </myuw-card-frame>
+    <br />
+    <myuw-card-frame size="full">
+      <myuw-card-header
+        slot="myuw-card-header"
+        title="Course Search and Enroll"
+      ></myuw-card-header>
+      <myuw-icon-link 
+        slot="myuw-card-content"
+        icon="fa-bookmark-o"
+        icon-type="fa"
+        href="https://www.google.com"
+      ></myuw-icon-link>
       <myuw-card-footer
         slot="myuw-card-footer"
         text="Launch app"

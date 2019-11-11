@@ -1,27 +1,31 @@
 {
-  "name": "myuw-card-frame",
-  "version": "1.0.0",
+  "name": "myuw-card",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
+  "browser": "dist/myuw-card.js",
   "scripts": {
-    "start": "npx parcel index.html",
+    "start": "run-p watch serve",
     "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "serve": "live-server --port=4200",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.7.0",
+    "@babel/core": "^7.7.2",
     "eslint": "^6.6.0",
-    "parcel": "^1.12.4",
-    "prettier": "^1.18.2",
-    "rollup": "^1.26.3",
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "rollup": "^1.26.5",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-babel-minify": "^9.1.0",
+    "rollup-plugin-babel-minify": "^9.1.1",
     "rollup-plugin-html": "^0.2.1"
   },
   "prettier": {
     "trailingComma": "es5"
-  }
+  },
+  "dependencies": {}
 }
