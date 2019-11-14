@@ -1,51 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      body {
-        background: #cccccc;
-      }
-    </style>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400&display=swap" rel="stylesheet"> 
-    <script type="module" src="dist/myuw-card.mjs"></script>
-  </head>
-  <body>
-    <myuw-card-frame size="full">
-      <myuw-card-header
-        slot="myuw-card-header"
-        title="Course Search and Enroll"
-      ></myuw-card-header>
-      <myuw-card-message
-        message="You've got mail!"
-        variant="warn"
-      ></myuw-card-message>
-      <myuw-icon-link 
-        icon="face"
-        icon-type="md"
-        href="https://www.google.com"
-      ></myuw-icon-link>
-      <myuw-card-footer
-        slot="myuw-card-footer"
-        text="Launch app"
-        href="https://www.google.com"
-      ></myuw-card-footer>
-    </myuw-card-frame>
-    <br />
-    <myuw-card-frame size="full">
-      <myuw-card-header
-        slot="myuw-card-header"
-        title="STAR Time Entry"
-      ></myuw-card-header>
-      <myuw-icon-link 
-        icon="fa-bookmark-o"
-        icon-type="fa"
-        href="https://www.google.com"
-      ></myuw-icon-link>
-      <myuw-card-footer
-        slot="myuw-card-footer"
-        text="Launch app"
-        href="https://www.google.com"
-      ></myuw-card-footer>
-    </myuw-card-frame>
-  </body>
-</html>
+<style>
+  body {
+    background: #cccccc;
+  }
+  .demo__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 290px);
+    grid-gap: 10px;
+    grid-auto-rows: min-content;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300, 400&display=swap" rel="stylesheet">
+<script type="module" src="dist/myuw-card.mjs"></script>
+<div class="demo__container">
+  <myuw-card-frame size="full">
+    <myuw-card-header
+      slot="myuw-card-header"
+      title="Icon Link"
+    ></myuw-card-header>
+    <myuw-icon-link
+      icon="face"
+      icon-type="md"
+      href="https://www.google.com"
+    ></myuw-icon-link>
+    <myuw-card-footer
+      slot="myuw-card-footer"
+      text="Launch app"
+      href="https://www.google.com"
+    ></myuw-card-footer>
+  </myuw-card-frame>
+  <myuw-card-frame size="full">
+    <myuw-card-header
+      slot="myuw-card-header"
+      title="Icon Link and Message"
+    ></myuw-card-header>
+    <myuw-card-message
+      message="You've got mail!"
+    ></myuw-card-message>
+    <myuw-icon-link
+      icon="fa-bookmark-o"
+      icon-type="fa"
+      href="https://www.google.com"
+    ></myuw-icon-link>
+    <myuw-card-footer
+      slot="myuw-card-footer"
+      text="Launch app"
+      href="https://www.google.com"
+    ></myuw-card-footer>
+  </myuw-card-frame>
+  <myuw-card-frame size="full">
+    <myuw-card-header
+      slot="myuw-card-header"
+      title="Icon Link and Warn Message"
+    ></myuw-card-header>
+    <myuw-card-message
+      message="Time to wake up!"
+      variant="warn"
+    ></myuw-card-message>
+    <myuw-icon-link
+      icon="alarm"
+      icon-type="md"
+      href="https://www.google.com"
+    ></myuw-icon-link>
+    <myuw-card-footer
+      slot="myuw-card-footer"
+      text="Launch app"
+      href="https://www.google.com"
+    ></myuw-card-footer>
+  </myuw-card-frame>
+</div>
