@@ -39,7 +39,6 @@ export class MyUWCardFrame extends HTMLElement {
           <slot name="myuw-card-header"></slot>
           <div class="card-content">
             <slot></slot>
-            <slot></slot>
           </div>
           <slot name="myuw-card-footer"></slot>
         </div>
