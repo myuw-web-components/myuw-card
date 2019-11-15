@@ -6,7 +6,7 @@ const fileName = "myuw-card";
 const objName = "MyUWCard";
 
 const htmlConfig = {
-  include: "src/*.html",
+  include: "src/**/*.html",
   htmlMinifierOptions: {
     collapseWhitespace: true,
     collapseBooleanAttributes: true,
@@ -15,15 +15,15 @@ const htmlConfig = {
 };
 
 const pluginConfig = {
-  full: [html(htmlConfig)],
-  min: [html(htmlConfig), minify()],
+  full: [html(htmlConfig), babel({ exclude: "node_modules/**" })],
+  min: [html(htmlConfig), minify(), babel({ exclude: "node_modules/**" })],
 };
 
 export default [
   // Non-minified IIFE bundle
   {
-    input: "index.js",
-    plugins: pluginConfig.full.concat([babel({ exclude: "node_modules/**" })]),
+    input: "src/index.js",
+    plugins: pluginConfig.full,
     output: {
       file: `dist/${fileName}.js`,
       name: objName,
@@ -32,8 +32,8 @@ export default [
   },
   // Minified IIFE bundle
   {
-    input: "index.js",
-    plugins: pluginConfig.min.concat([babel({ exclude: "node_modules/**" })]),
+    input: "src/index.js",
+    plugins: pluginConfig.min,
     output: {
       file: `dist/${fileName}.min.js`,
       name: objName,
@@ -42,8 +42,8 @@ export default [
   },
   // Non-minified ES module
   {
-    input: "index.js",
-    plugins: pluginConfig.full.concat([babel({ exclude: "node_modules/**" })]),
+    input: "src/index.js",
+    plugins: pluginConfig.full,
     output: {
       file: `dist/${fileName}.mjs`,
       name: objName,
@@ -52,8 +52,8 @@ export default [
   },
   // Minified ES module
   {
-    input: "index.js",
-    plugins: pluginConfig.min.concat([babel({ exclude: "node_modules/**" })]),
+    input: "src/index.js",
+    plugins: pluginConfig.min,
     output: {
       file: `dist/${fileName}.min.mjs`,
       name: objName,
