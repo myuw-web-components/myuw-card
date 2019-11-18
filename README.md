@@ -2,14 +2,26 @@
 
 ![MyUW Card](myuw-card.png)
 
-## Example Usage
+## Getting Started
+
+Import and include the component as follows:
 
 ```html
+<script type="module" src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-card@latest/myuw-card.min.mjs"></script>
+
+<!-- fallback for browsers without ES2015 module support -->
+<script nomodule src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-card@latest/myuw-card.min.js"></script>
+
 <myuw-card-frame size="full">
   <myuw-card-header
     slot="myuw-card-header"
     title="Course Search and Enroll"
   ></myuw-card-header>
+  <myuw-icon-link
+    icon="face"
+    icon-type="md"
+    href="https://www.google.com"
+  ></myuw-icon-link>
   <myuw-card-footer
     slot="myuw-card-footer"
     text="Launch app"
@@ -18,7 +30,13 @@
 </myuw-card-frame>
 ```
 
+_Note:_ The evergreen "latest" version can be used for convenience, but in production settings it is
+recommended to use the latest [release version](https://github.com/myuw-web-components/myuw-card/releases)
+specifically, and upgrade only after testing!
+
 ## Contributing
+
+See also: [CONTRIBUTING](contributing.md)
 
 ### Developer Requirements
 
