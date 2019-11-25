@@ -70,7 +70,7 @@ pipeline {
       steps {
         sh '''echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc'''
         withCredentials([string(credentialsId: 'npm-token', variable: 'NPM_TOKEN')]) {
-          sh 'npm publish'
+          sh 'npm publish --access public'
         }
       }
     }
