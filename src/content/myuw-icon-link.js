@@ -6,9 +6,9 @@ export class MyUWIconLink extends HTMLElement {
   }
 
   static get template() {
-    if (this._template === undefined) {
-      this._template = document.createElement("template");
-      this._template.innerHTML = `
+    if (this._template===undefined) {
+      this._template=document.createElement("template");
+      this._template.innerHTML=`
         <style>
           a {
             text-decoration: none;
@@ -24,7 +24,7 @@ export class MyUWIconLink extends HTMLElement {
           .material-icons {
             font-family: "Material Icons" !important;
           }
-          .material-icons.md-70, .fa.fa-70 {
+          .material-icons.md-70, .fa-70 {
             font-size: 70px;
           }
         </style>
@@ -44,19 +44,19 @@ export class MyUWIconLink extends HTMLElement {
     this.shadowRoot
       .getElementById("container")
       .appendChild(createIconElement(this.iconType, this.icon));
-    this.shadowRoot.getElementById("link").href = this.href;
+    this.shadowRoot.getElementById("link").href=this.href;
   }
 
   get icon() {
-    return this.getAttribute("icon") || "";
+    return this.getAttribute("icon")||"";
   }
 
   get iconType() {
-    return this.getAttribute("icon-type") || "";
+    return this.getAttribute("icon-type")||"";
   }
 
   get href() {
-    return this.getAttribute("href") || "#";
+    return this.getAttribute("href")||"#";
   }
 }
 
