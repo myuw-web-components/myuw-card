@@ -1,5 +1,5 @@
 {
-  "name": "myuw-card",
+  "name": "@myuw-web-components/myuw-card",
   "version": "2.0.0",
   "description": "",
   "module": "dist/myuw-card.min.mjs",
