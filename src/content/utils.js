@@ -1,12 +1,12 @@
-export const iconMap = {
+export const iconMap={
   md: {
     styleUrl: "https://fonts.googleapis.com/icon?family=Material+Icons",
     classes: "material-icons md-70",
   },
   fa: {
     styleUrl:
-      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-    classes: "fa fa-70",
+      "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
+    classes: "fa-70"
   },
 };
 
@@ -15,12 +15,12 @@ export const iconMap = {
  * @param {string|undefined} icon
  * @returns HTMLElement
  */
-export function createIconElement(iconType, icon = undefined) {
-  const node = document.createElement("i");
+export function createIconElement(iconType, icon=undefined) {
+  const node=document.createElement("i");
   switch (iconType) {
     case "md": {
       node.setAttribute("class", iconMap.md.classes);
-      node.innerText = icon;
+      node.innerText=icon;
       break;
     }
     case "fa": {
@@ -37,7 +37,7 @@ export function createIconElement(iconType, icon = undefined) {
  * @returns HTMLElement
  */
 export function createStyleElement(iconType) {
-  const node = document.createElement("link");
+  const node=document.createElement("link");
   node.setAttribute("rel", "stylesheet");
   node.setAttribute("href", iconMap[iconType].styleUrl);
   return node;
