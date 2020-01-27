@@ -12,59 +12,55 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400&display=swap" rel="stylesheet">
 <script type="module" src="dist/myuw-card.mjs"></script>
 <div class="demo__container">
-  <myuw-card-frame size="full">
-    <myuw-card-header
-      slot="myuw-card-header"
-      title="Icon Link"
-    ></myuw-card-header>
-    <myuw-icon-link
-      icon="face"
-      icon-type="md"
-      href="https://www.google.com"
-    ></myuw-icon-link>
-    <myuw-card-footer
-      slot="myuw-card-footer"
-      text="Launch app"
-      href="https://www.google.com"
-    ></myuw-card-footer>
+  <myuw-card-frame>
+    <myuw-card-header>
+      Icon Link
+    </myuw-card-header>
+    <myuw-card-content>
+      <myuw-icon-link
+        icon="face"
+        icon-type="md"
+        href="https://www.google.com"
+      ></myuw-icon-link>
+    </myuw-card-content>
+    <myuw-card-footer href="https://www.google.com">
+      Launch app
+    </myuw-card-footer>
   </myuw-card-frame>
-  <myuw-card-frame size="full">
-    <myuw-card-header
-      slot="myuw-card-header"
-      title="Icon Link and Message"
-    ></myuw-card-header>
-    <myuw-card-message
-      message="You've got mail!"
-    ></myuw-card-message>
-    <myuw-icon-link
-      icon="fa-bookmark-o"
-      icon-type="fa"
-      href="https://www.google.com"
-    ></myuw-icon-link>
-    <myuw-card-footer
-      slot="myuw-card-footer"
-      text="Launch app"
-      href="https://www.google.com"
-    ></myuw-card-footer>
+  <myuw-card-frame>
+    <myuw-card-header>
+      Icon Link and Message
+    </myuw-card-header>
+    <myuw-card-content>
+      <myuw-card-message>
+        You've got mail!
+      </myuw-card-message>
+      <myuw-icon-link
+        icon="fa-bookmark-o"
+        icon-type="fa"
+        href="https://www.google.com"
+      ></myuw-icon-link>
+    </myuw-card-content>
+    <myuw-card-footer href="https://www.google.com">
+      Launch app
+    </myuw-card-footer>
   </myuw-card-frame>
-  <myuw-card-frame size="full">
-    <myuw-card-header
-      slot="myuw-card-header"
-      title="Icon Link and Warn Message"
-    ></myuw-card-header>
-    <myuw-card-message
-      message="Time to wake up!"
-      variant="warn"
-    ></myuw-card-message>
-    <myuw-icon-link
-      icon="alarm"
-      icon-type="md"
-      href="https://www.google.com"
-    ></myuw-icon-link>
-    <myuw-card-footer
-      slot="myuw-card-footer"
-      text="Launch app"
-      href="https://www.google.com"
-    ></myuw-card-footer>
+  <myuw-card-frame>
+    <myuw-card-header>
+      Icon Link and Warn Message
+    </myuw-card-header>
+    <myuw-card-content>
+      <myuw-card-message variant="warn">
+        Time to wake up!
+      </myuw-card-message>
+      <myuw-icon-link
+        icon="alarm"
+        icon-type="md"
+        href="https://www.google.com"
+      ></myuw-icon-link>
+    </myuw-card-content>
+    <myuw-card-footer href="https://www.google.com">
+      Lanch app
+    </myuw-card-footer>
   </myuw-card-frame>
 </div>
