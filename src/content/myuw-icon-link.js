@@ -10,16 +10,30 @@ export class MyUWIconLink extends HTMLElement {
       this._template = document.createElement("template");
       this._template.innerHTML = `
         <style>
+          :host {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+            justify-content: center;
+            align-items: center;
+          }
           a {
+            display: flex;
+            flex: 1;
+            width: 100%;
             text-decoration: none;
             color: #333;
           }
           #container {
             display: flex;
-            flex-grow: 1;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            flex-grow: 1;
+          }
+          i {
+            position: relative;
+            top: -10%;
           }
           .material-icons {
             font-family: "Material Icons" !important;

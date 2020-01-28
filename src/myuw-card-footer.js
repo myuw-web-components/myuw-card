@@ -8,35 +8,39 @@ export class MyUWCardFooter extends HTMLElement {
       this._template = document.createElement("template");
       this._template.innerHTML = `
         <style>
-          #footer-button {
-            font-weight: 300;
-            position: absolute;
-            bottom: 0;
-            margin: 0;
-            color: var(--myuw-footer-text, #696969);
-            background: var(--myuw-footer-background, #d8d8d8);
+          :host {
             width: 100%;
-            padding: 8px 0;
-            text-align: center;
+            height: 36px;
+            position: relative;
             font-size: 14px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          }
+          a {
+            color: #696969;
             text-decoration: none;
+            font-family: "Roboto", sans-serif;
+            font-family: var(--myuw-app-bar-font);
+            font-weight: 400;
           }
-          #footer-button:hover {
-            background: var(--myuw-footer-background-hover, var(--myuw-primary-bg, #c5050c));
-            color: var(--myuw-footer-text-hover, #f5f5f5)
+          div {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: #d8d8d8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
           }
-          .container {
-            height: 60px;
+          div:hover {
+            background-color: var(--myuw-primary-bg, #c5050c);
+            color: var(--myuw-primary-color, #fafafa);
           }
         </style>
-        <div class="container">
-          <a href="#" id="footer-button" target="_blank" rel="noopener noreferrer">
-            <div>
-              <span id="footer-text"></span>
-            </div>
-          </a>
-        </div>
+
+        <a id="footer-button" href="#">
+          <div>
+            <slot></slot>
+          </div>
+        </a>
       `;
     }
     return this._template;
@@ -49,15 +53,10 @@ export class MyUWCardFooter extends HTMLElement {
       MyUWCardFooter.template.content.cloneNode(true)
     );
     this.shadowRoot.getElementById("footer-button").href = this.href;
-    this.shadowRoot.getElementById("footer-text").innerText = this.text;
   }
 
   get href() {
     return this.getAttribute("href") || "#";
-  }
-
-  get text() {
-    return this.getAttribute("text") || "";
   }
 }
 

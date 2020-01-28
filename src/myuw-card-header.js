@@ -8,44 +8,30 @@ export class MyUWCardHeader extends HTMLElement {
       this._template = document.createElement("template");
       this._template.innerHTML = `
         <style>
-          #myuw-card-header {
-            display: flex;
-            flex-direction: row;
-            font-weight: 300;
+          :host {
+            background-color: white;
+            width: 100%;
             height: 60px;
-            width: 290px;
-            line-height: 1.1;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 0 40px;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            box-sizing: border-box;
+            color: var(--myuw-car-font-color, #333);
+            font-weight: 200;
+          }
+          .more-icon {
             position: absolute;
-            overflow-x: hidden;
-          }
-          #header-text {
-            margin: 0 auto;
-          }
-          #more-icon {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 15px 15px;
-          }
-          path {
-            fill: var(--icon-fill-color, #696969);
+            top: 5%;
+            right: 5%;
+            fill: rgba(0, 0, 0, 0.54);
           }
         </style>
-        <div>
-          <div id="myuw-card-header">
-            <span id="header-text"></span>
-          </div>
-          <svg id="more-icon" width="20" height="20">
-            <g transform="scale(0.8)">
+
+        <slot></slot>
+        <svg class="more-icon" width="20" height="20">
+          <g transform="scale(0.8)">
               <path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
-            </g>
-          </svg>
-        <div>
+          </g>
+        </svg>
       `;
     }
     return this._template;
@@ -57,11 +43,6 @@ export class MyUWCardHeader extends HTMLElement {
     this.shadowRoot.appendChild(
       MyUWCardHeader.template.content.cloneNode(true)
     );
-    this.shadowRoot.getElementById("header-text").innerText = this.title;
-  }
-
-  get title() {
-    return this.getAttribute("title") || "";
   }
 }
 

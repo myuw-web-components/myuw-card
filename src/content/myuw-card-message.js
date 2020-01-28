@@ -8,15 +8,16 @@ export class MyUWCardMessage extends HTMLElement {
       this._template = document.createElement("template");
       this._template.innerHTML = `
         <style>
-          #message {
+          :host {
             font-weight: lighter;
             font-size: 14px;
+            text-align: center;
           }
           .warn {
             color: #c5050c;
           }
         </style>
-        <p id="message"></p>
+        <p id="message"><slot></slot></p>
       `;
     }
     return this._template;
@@ -29,12 +30,7 @@ export class MyUWCardMessage extends HTMLElement {
       MyUWCardMessage.template.content.cloneNode(true)
     );
     const node = this.shadowRoot.getElementById("message");
-    node.innerText = this.message;
     node.className = this.variant;
-  }
-
-  get message() {
-    return this.getAttribute("message") || "";
   }
 
   get variant() {
