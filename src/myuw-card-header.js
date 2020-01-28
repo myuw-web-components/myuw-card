@@ -18,7 +18,7 @@ export class MyUWCardHeader extends HTMLElement {
             color: var(--myuw-car-font-color, #333);
             font-weight: 200;
           }
-          svg {
+          .more-icon {
             position: absolute;
             top: 5%;
             right: 5%;
@@ -27,7 +27,7 @@ export class MyUWCardHeader extends HTMLElement {
         </style>
 
         <slot></slot>
-        <svg id="more-icon" width="20" height="20">
+        <svg class="more-icon" width="20" height="20">
           <g transform="scale(0.8)">
               <path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
           </g>
