@@ -35,12 +35,6 @@ export class MyUWIconLink extends HTMLElement {
             width: 70px;
             height: 70px;
           }
-          .material-icons {
-            font-family: "Material Icons" !important;
-          }
-          .material-icons.md-70, .fa.fa-70 {
-            font-size: 70px;
-          }
         </style>
 
         <a id="link" href="#" target="_blank" rel="noopener noreferrer">
