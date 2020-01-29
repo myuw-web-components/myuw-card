@@ -1,5 +1,3 @@
-import { createStyleElement, createIconElement } from "./utils";
-
 export class MyUWIconLink extends HTMLElement {
   static get elementName() {
     return "myuw-icon-link";
@@ -31,9 +29,11 @@ export class MyUWIconLink extends HTMLElement {
             align-items: center;
             flex-grow: 1;
           }
-          i {
+          ::slotted(img) {
             position: relative;
             top: -10%;
+            width: 70px;
+            height: 70px;
           }
           .material-icons {
             font-family: "Material Icons" !important;
@@ -44,7 +44,9 @@ export class MyUWIconLink extends HTMLElement {
         </style>
 
         <a id="link" href="#" target="_blank" rel="noopener noreferrer">
-          <div id="container"></div>
+          <div id="container">
+            <slot></slot>
+          </div>
         </a>
       `;
     }
@@ -54,19 +56,7 @@ export class MyUWIconLink extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(MyUWIconLink.template.content.cloneNode(true));
-    this.shadowRoot.appendChild(createStyleElement(this.iconType));
-    this.shadowRoot
-      .getElementById("container")
-      .appendChild(createIconElement(this.iconType, this.icon));
     this.shadowRoot.getElementById("link").href = this.href;
-  }
-
-  get icon() {
-    return this.getAttribute("icon") || "";
-  }
-
-  get iconType() {
-    return this.getAttribute("icon-type") || "";
   }
 
   get href() {
