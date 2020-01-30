@@ -67,10 +67,14 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
   <myuw-card-message variant="warn">
     You need to click these buttons!
   </myuw-card-message>
-  <myuw-link-list>
-    <myuw-fab-link href="https://www.google.com">Deposit money</myuw-fab-link>
-    <myuw-fab-link href="https://www.google.com">Report lost card</myuw-fab-link>
-  </myuw-link-list>
+  <myuw-fab-link href="https://www.google.com">
+    <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+    <p>Deposit money</p>
+  </myuw-fab-link>
+  <myuw-fab-link href="https://www.google.com">
+    <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+    <p>Report lost card</p>
+  </myuw-fab-link>
 </myuw-card-content>
 ```
 
@@ -79,12 +83,24 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
 ```html
 <myuw-card-content>
   <myuw-link-list>
-    <myuw-fab-link href="https://www.google.com">Jump around</myuw-fab-link>
-    <myuw-fab-link href="https://www.google.com">Sit on Terrace</myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">
+      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <p>Jump around</p>
+    </myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">
+      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <p>Sit on Terrace</p>
+    </myuw-fab-link>
   </myuw-link-list>
   <myuw-link-list>
-    <myuw-fab-link href="https://www.google.com">Deposit money</myuw-fab-link>
-    <myuw-fab-link href="https://www.google.com">Report lost card</myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">
+      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <p>Deposit money</p>
+    </myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">
+      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <p>Report lost card</p>
+    </myuw-fab-link>
   </myuw-link-list>
 </myuw-card-content>
 ```
