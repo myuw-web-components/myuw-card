@@ -60,6 +60,44 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
 <myuw-card-content>
 ```
 
+#### List of links with message
+
+```html
+<myuw-card-content>
+  <myuw-card-message variant="warn">
+    You need to click these buttons!
+  </myuw-card-message>
+  <myuw-link-list>
+    <myuw-fab-link href="https://www.google.com">Deposit money</myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">Report lost card</myuw-fab-link>
+  </myuw-link-list>
+</myuw-card-content>
+```
+
+#### Two rows of list of links
+
+```html
+<myuw-card-content>
+  <myuw-link-list>
+    <myuw-fab-link href="https://www.google.com">Jump around</myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">Sit on Terrace</myuw-fab-link>
+  </myuw-link-list>
+  <myuw-link-list>
+    <myuw-fab-link href="https://www.google.com">Deposit money</myuw-fab-link>
+    <myuw-fab-link href="https://www.google.com">Report lost card</myuw-fab-link>
+  </myuw-link-list>
+</myuw-card-content>
+```
+
+### Customization
+
+The following CSS variables are defined for customization:
+
+| Variable               | Description                             | Default |
+|------------------------|-----------------------------------------|---------|
+|`--myuw-fab-color`      |FAB button background color              |`#0479a8`|
+|`--myuw-fab-color-hover`|FAB button background color when hovering|`#034e6c`|
+
 ## Contributing
 
 See also: [CONTRIBUTING](contributing.md)

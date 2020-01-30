@@ -13,6 +13,9 @@ export class MyUWCardMessage extends HTMLElement {
             font-size: 14px;
             text-align: center;
           }
+          p {
+            margin-bottom: 20px;
+          }
           .warn {
             color: #c5050c;
           }
