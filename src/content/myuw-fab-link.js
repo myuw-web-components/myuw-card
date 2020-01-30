@@ -28,7 +28,7 @@ export class MyUWFabLink extends HTMLElement {
           a:not([disabled]) {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
           }
-          img {
+          ::slotted(img) {
             width: 24px;
             height: 24px;
             position: relative;
@@ -37,7 +37,7 @@ export class MyUWFabLink extends HTMLElement {
             filter: invert(1);
             opacity: 0.87;
           }
-          p {
+          ::slotted(p) {
             font-size: 14px;
             font-weight: 400;
             line-height: 20px;
@@ -50,9 +50,9 @@ export class MyUWFabLink extends HTMLElement {
 
         <div>
           <a id="fab-link" href="#" target="_blank" rel="noopener noreferrer">
-            <img src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+            <slot name="fab-icon"></slot>
           </a>
-          <p><slot></slot></p>
+          <slot></slot>
         </div>
       `;
     }
