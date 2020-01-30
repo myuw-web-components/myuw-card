@@ -18,7 +18,7 @@ Import and include the component as follows:
   </myuw-card-header>
   <myuw-card-content>
     <myuw-icon-link href="https://www.google.com">
-      <img src="/path/to/icon.svg">
+      <img src="/path/to/icon.svg" alt="icon description">
     </myuw-icon-link>
   </myuw-card-content>
   <myuw-card-footer href="https://www.google.com">
@@ -44,7 +44,7 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
 ```html
 <myuw-card-content>
   <myuw-icon-link href="https://wisc.edu">
-    <img src="/path/to/icon.svg">
+    <img src="/path/to/icon.svg" alt="icon description">
   </myuw-icon-link>
 <myuw-card-content>
 ```
@@ -55,7 +55,7 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
 <myuw-card-content>
   <myuw-card-message>Your message here</myuw-card-message>
   <myuw-icon-link href="https://wisc.edu">
-    <img src="/path/to/icon.svg">
+    <img src="/path/to/icon.svg" alt="icon description">
   </myuw-icon-link>
 <myuw-card-content>
 ```
@@ -68,7 +68,7 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
     You need to click these buttons!
   </myuw-card-message>
   <myuw-fab-link href="https://www.google.com">
-    <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+    <img slot="fab-icon" src="/path/to/icon.svg" alt="icon description">
     <p>Deposit money</p>
   </myuw-fab-link>
   <myuw-fab-link href="https://www.google.com">
@@ -84,21 +84,21 @@ All content blocks must be placed inside a `<myuw-card-content></myuw-card-conte
 <myuw-card-content>
   <myuw-link-list>
     <myuw-fab-link href="https://www.google.com">
-      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <img slot="fab-icon" src="/path/to/icon.svg" alt="icon description">
       <p>Jump around</p>
     </myuw-fab-link>
     <myuw-fab-link href="https://www.google.com">
-      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <img slot="fab-icon" src="/path/to/icon.svg" alt="icon description">
       <p>Sit on Terrace</p>
     </myuw-fab-link>
   </myuw-link-list>
   <myuw-link-list>
     <myuw-fab-link href="https://www.google.com">
-      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <img slot="fab-icon" src="/path/to/icon.svg" alt="icon description">
       <p>Deposit money</p>
     </myuw-fab-link>
     <myuw-fab-link href="https://www.google.com">
-      <img slot="fab-icon" src="https://my.wisc.edu/images/widgetIcons/canvas-logo.svg">
+      <img slot="fab-icon" src="/path/to/icon.svg" alt="icon description">
       <p>Report lost card</p>
     </myuw-fab-link>
   </myuw-link-list>
