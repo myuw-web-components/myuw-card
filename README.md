@@ -12,27 +12,53 @@ Import and include the component as follows:
 <!-- fallback for browsers without ES2015 module support -->
 <script nomodule src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-card@latest/myuw-card.min.js"></script>
 
-<myuw-card-frame size="full">
-  <myuw-card-header
-    slot="myuw-card-header"
-    title="Course Search and Enroll"
-  ></myuw-card-header>
-  <myuw-icon-link
-    icon="face"
-    icon-type="md"
-    href="https://www.google.com"
-  ></myuw-icon-link>
-  <myuw-card-footer
-    slot="myuw-card-footer"
-    text="Launch app"
-    href="https://www.google.com"
-  ></myuw-card-footer>
+<myuw-card-frame>
+  <myuw-card-header>
+    Course Search and Enroll
+  </myuw-card-header>
+  <myuw-card-content>
+    <myuw-icon-link href="https://www.google.com">
+      <img src="/path/to/icon.svg">
+    </myuw-icon-link>
+  </myuw-card-content>
+  <myuw-card-footer href="https://www.google.com">
+    Launch full app
+  </myuw-card-footer>
 </myuw-card-frame>
 ```
 
 _Note:_ The evergreen "latest" version can be used for convenience, but in production settings it is
 recommended to use the latest [release version](https://github.com/myuw-web-components/myuw-card/releases)
 specifically, and upgrade only after testing!
+
+### Composable Card Layouts
+
+MyUW Card layouts are composable, which enables a degree of flexibility with widget content. The example
+above shows the basic usage, but it is possible to mix and match content blocks to create new widget
+variations.
+
+All content blocks must be placed inside a `<myuw-card-content></myuw-card-content>` component.
+
+#### Basic icon link
+
+```html
+<myuw-card-content>
+  <myuw-icon-link href="https://wisc.edu">
+    <img src="/path/to/icon.svg">
+  </myuw-icon-link>
+<myuw-card-content>
+```
+
+#### Icon link with message
+
+```html
+<myuw-card-content>
+  <myuw-card-message>Your message here</myuw-card-message>
+  <myuw-icon-link href="https://wisc.edu">
+    <img src="/path/to/icon.svg">
+  </myuw-icon-link>
+<myuw-card-content>
+```
 
 ## Contributing
 
