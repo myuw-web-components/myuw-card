@@ -15,6 +15,9 @@ Import and include the component as follows:
 <myuw-card-frame>
   <myuw-card-header>
     Course Search and Enroll
+    <myuw-card-menu fname="course-search-and-enroll">
+      <span>Course Search and Enroll:</span> Search for courses, plan your next semester and enroll in one convenient, easy-to-use app.
+    </myuw-card-menu>
   </myuw-card-header>
   <myuw-card-content>
     <myuw-icon-link href="https://www.google.com">

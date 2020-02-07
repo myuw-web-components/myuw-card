@@ -1,6 +1,6 @@
 {
   "name": "@myuw-web-components/myuw-card",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "",
   "module": "dist/myuw-card.min.mjs",
   "browser": "dist/myuw-card.js",
