@@ -68,8 +68,8 @@ export class MyUWCardMenu extends HTMLElement {
             left: 0;
           }
           #more-menu.open + #menu-overlay {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             opacity: 0;
             z-index: 998;
             visibility: visible;
@@ -79,7 +79,7 @@ export class MyUWCardMenu extends HTMLElement {
             display: flex;
             align-items: center;
           }
-          ::slotted(span) {
+          #title {
             font-weight: bold;
           }
         </style>
@@ -90,20 +90,21 @@ export class MyUWCardMenu extends HTMLElement {
         </svg>
         <div id="more-menu">
           <div class="row">
-            <svg class="menu-icon" width="24" height="24">
+            <svg class="menu-icon" aria-label="info icon" width="24" height="24">
               <g>
-                <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                <path aria-label="info graphic" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
               </g>
             </svg>
             <div>
+              <span id="title"></span>
               <slot></slot>
             </div>
           </div>
           <a id="details" href="#" aria-label="" role="menuitem">
             <div class="row">
-              <svg class="menu-icon" width="24" height="24">
+              <svg class="menu-icon" aria-label="details icon" width="24" height="24">
                 <g>
-                  <path d="M6.38,6H17.63L12,16L6.38,6M3,4L12,20L21,4H3Z" />
+                  <path aria-label="info graphic" d="M6.38,6H17.63L12,16L6.38,6M3,4L12,20L21,4H3Z" />
                 </g>
               </svg>
               <span>Details</span>
@@ -111,9 +112,9 @@ export class MyUWCardMenu extends HTMLElement {
           </a>
           <button id="remove" aria-label="" role="menuitem">
             <div class="row">
-              <svg class="menu-icon" width="24" height="24">
+              <svg class="menu-icon" aria-label="remove icon" width="24" height="24">
                 <g>
-                  <path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" />
+                  <path aria-label="remove graphic" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" />
                 </g>
               </svg>
               <span>Remove from home</span>
@@ -152,7 +153,7 @@ export class MyUWCardMenu extends HTMLElement {
    * Anchor the menu to its right side if it is not fully visibile in the viewport
    * @param {(Event|null)} event
    */
-  positionMenu(event) {
+  positionMenu() {
     const menu = this.shadowRoot.getElementById("more-menu");
     const boundingRect = menu.getBoundingClientRect();
     if (
@@ -161,10 +162,6 @@ export class MyUWCardMenu extends HTMLElement {
     ) {
       menu.style.transform = "translate(-90%, 5%)";
     }
-
-    if (event) {
-      //event.preventDefault();
-    }
   }
 
   constructor() {
@@ -172,6 +169,19 @@ export class MyUWCardMenu extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(MyUWCardMenu.template.content.cloneNode(true));
     this.shadowRoot.getElementById("details").setAttribute("href", this.href);
+
+    const title = this.parentElement.firstChild.textContent.trim();
+    this.shadowRoot.getElementById("title").textContent = `${title}: `;
+
+    this.shadowRoot
+      .getElementById("remove")
+      .setAttribute(
+        "aria-label",
+        `remove ${title} widget from your home screen`
+      );
+    this.shadowRoot
+      .getElementById("details")
+      .setAttribute("aria-label", `details about ${title}`);
   }
 
   connectedCallback() {
