@@ -1,5 +1,7 @@
 # myuw-card
 
+**`myuw-card` is not currently maintained.**
+
 ![MyUW Card](myuw-card.png)
 
 ## Getting Started
